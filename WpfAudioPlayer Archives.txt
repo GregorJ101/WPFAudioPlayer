@@ -396,3 +396,7 @@ WpfAudioPlayer - 2018-04-25 v0.5.0.03
      <ctrl>-Home & added to "Show Supported Keystrokes" message box
   Added code to hide desktop icon in "Always on top" Topmost mode
   Fixed issue that prevented About box from showing the first time
+
+WpfAudioPlayer - 2018-04-28 v0.5.0.04
+  Fixed issue: Controls stay hidden in "Always Show" Show Controls state
+  Fixed issue: Progressbar remains visible in stop state with a single file
