@@ -400,3 +400,9 @@ WpfAudioPlayer - 2018-04-25 v0.5.0.03
 WpfAudioPlayer - 2018-04-28 v0.5.0.04
   Fixed issue: Controls stay hidden in "Always Show" Show Controls state
   Fixed issue: Progressbar remains visible in stop state with a single file
+
+WpfAudioPlayer - 2018-05-19 v0.5.0.05
+  Set file timestamp display to show leading zero in time and date
+  Fixed wpl parsing code to correctly identify tags
+  Added code to skip lines in wpl files in XML comments
+  Changed doe to show tag background in mouseover in stop state
