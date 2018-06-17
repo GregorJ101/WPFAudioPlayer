@@ -1,0 +1,421 @@
+WpfAudioPlayer Archives
+
+WpfAudioPlayer - 2017-06-28 v0.1.0.01
+  Functional audio player
+  Plays m3u and wpl playlists
+  Plays mp3, wav, and wma audio files
+  Validates entire playlist on loading and displays missing track names
+  Has all window behavior in WpfClock
+    Always on top
+    Draggable
+    Set Font & background colors
+    Font selection
+    Border color, radius, color, thickness (store setting in registry)
+    Show version & build in tooltip, optionally
+    Show/hide taskbar icon (store setting in registry)
+    Hide window & show systray icon
+  Has menu from WpfClock
+  Persists menu settings in registry
+  Supports /r to repeat single track or entire playlist
+  Supports /s to select tracks randomly without repeating any track until
+    the entire playlist has been played
+  Supports /i to ignore missing tracks in playlist
+  Shows names of missing tracks in playlist
+  Shows About box
+  Shows Usage box on /?
+  Shows position in playback in progress bar
+  Supports start, pause, and stop buttons
+  Stops playing on entering sleep
+
+WpfAudioPlayer - 2017-06-29 v0.1.0.02
+  Added menuitems for repeat & shuffle
+  Moved code to validate and parse playlists to app.xaml.cs
+  Changed timer frequency to 1-second intervals
+  Added try/catch around code to get track duration
+  Added code to use FileOpenDialog when no filename is provided
+  Added code to allow multiple tracks to be selected in OpenFileDialog
+
+WpfAudioPlayer - 2017-06-29 v0.1.0.03
+  Added code to read and display ID3 (MP3) tag data & album art
+  Added code to select multiple files in OpenFileDialog and sort them by
+    track # or track title
+
+WpfAudioPlayer - 2017-06-30 v0.1.0.04
+  Implemented single-instance code
+  Adjusted track-loading code:
+    Limited missing-file list to 30 in messagebox
+    Abort if no playable files found
+    Load filename and extension for filename-keyed loading map
+  Added intermediate filename list to hold shuffled (or not) filenames
+    before loading into delete-when-played filename list
+  Added default images for MP3, WAV and WMA files without album art
+  Replaced text buttons with graphic button bar
+  Replaced separate play and pause buttons with single play/pause button
+  Added code to manage graphic button states and appearances
+  Refined code to manage tracks
+  Added code to skip to next & previous tracks
+  Added code to advance & back up 10 seconds
+  Refined end-of-track event handling code
+
+WpfAudioPlayer - 2017-07-01 v0.1.0.05
+  Implement shortcut keys for all buttons
+  Added code to hide text tags & controls except on mouse over events
+  Added default images for WMA and WAV and code to show them
+  Added code to copy all tags to clipboard
+  Added code to load files from directory path in command line
+  Replaced TextBox controls with TextBlock
+  Added control button tooltips
+  Deleted old commented-out code
+  Ensabled menuitem "shuffle" only for playlists
+
+WpfAudioPlayer - 2017-07-02 v0.1.0.06
+  Deleted old commented-out code
+  Added code to close app upon detection of another instance
+  Added code to resume playing after wake from sleep if app was playing
+    at sleep time
+
+WpfAudioPlayer - 2017-07-02 v0.1.0.07
+  Added code to read and display WMA album art and all text tags 
+
+WpfAudioPlayer - 2017-07-02 v0.1.0.08
+  Refactored & cleaned up WmaTagReader.cs
+
+WpfAudioPlayer - 2017-07-05 v0.1.0.09
+  Commented out WmaTagReader test code
+  Added keyboard hooking code
+  Added code to hide tag textblocks when playing is stopped
+
+WpfAudioPlayer - 2017-07-06 v0.1.0.10
+  Fixed issue of app starting randomly in stop mode or stopping
+    playback immediately after starting it, when starting while another
+    instance is already running
+  Improved random distribution in shuffling tracks
+  Created x64 & x86 solution configurations
+  Got all configurations to build completely
+  Removed all other solution configurations
+  Replaced Kopy.cmd with CopyToTools32.cmd & CopyToTools64.cmd
+  Created CleanAllConfigs.cmd file to clean for archiving by deleting all
+    .sdf, .pdf, .resources, .dll, .exe, .obj, .tlog and .baml files
+
+WpfAudioPlayer - 2017-07-08 v0.1.0.11
+  Cleaned up keyboard hooking code, resolved some issues, made it more
+    reliable
+
+WpfAudioPlayer - 2017-07-08 v0.1.0.12
+  Added code for Topmost-while-playing state
+  Fixed issue: tooltip hidden by window when Topmost = true
+  Fixed issue: status showed "Status" for first second of playback
+
+WpfAudioPlayer - 2017-07-10 v0.1.0.13
+  Added code to toggle topmost state using selected pause keystroke
+  Added code to determine 32-bit or 64-bit .net assemblies (for future use)
+
+WpfAudioPlayer - 2017-07-13 v0.1.0.14
+  Wrapped wrire-to-clipboard code in try/catch blocks
+  Increased test tag TextBlock control background opacity
+  Commented out support for font & font color selection
+
+WpfAudioPlayer - 2017-07-13 v0.1.0.15
+  Removed support for font & font color selection
+  Removed font files folder
+  Deleted obsolete Win32 API Wrapper classes
+
+WpfAudioPlayer - 2017-07-13 v0.1.0.16
+  Moved all .tif, .ico, and .png files to new Images folder in solution
+  Deleted obsolete font & text files
+  Created new Notes folder in solution & on disk
+  Moved all .txt files to new Notes folder on disk
+  Added .txt file to new Commands folder
+  Created new Commands folder on disk
+  Moved all .cmd files to new Commands folder on disk
+  Adapted XAML and .cs code to accomodate new image locations
+
+WpfAudioPlayer - 2017-07-13 v0.1.0.17
+  Enhanced back-up control to move to 10 seconds before end of previous
+    track
+  Made rapid pause key presses rotate through all topmost settings, not
+    just toggle topmost state
+
+WpfAudioPlayer - 2017-07-15 v0.1.0.18
+  Added code to hide track number & position when stopped
+  Updated About box to show ico and png files in new images folder
+
+WpfAudioPlayer - 2017-07-15 v0.1.0.19
+ Fixes issue: crash when non-audio files are in folder sent to player via
+   Send-To shortcut (e.g. .mp3.sfk)
+ Adapted process-watching code that determines when to self-terminate
+   Added code tecord process ID of any WpfAudioPlayer process at startup
+   Added code to shutdown only when WpfAudioPlayer process is detected with
+     different ID
+
+WpfAudioPlayer - 2017-07-16 v0.2.0.00
+  Added code to scroll text too long to fit in TextBlock
+
+WpfAudioPlayer - 2017-07-18 v0.1.0.21
+  Fixed crash when reading tags from untagged file
+  Cleaned up tag showing code some
+  Removed commented-out code
+
+WpfAudioPlayer - 2017-07-18 v0.1.0.22
+  Added code to read and display track tags from .wav files, including
+    album art
+
+WpfAudioPlayer - 2017-07-19 v0.1.0.23
+  Replaced ID3 library code with internal ID3 tag reading code
+
+WpfAudioPlayer - 2017-07-19 v0.1.0.24
+  Removed commented out code
+
+WpfAudioPlayer - 2017-07-21 v0.2.0.00
+  Added code to validate ID3 APIC tag by searching for "image/jpg" string
+  Added code to validate WMA Picture tag by searching for "image/jpg"
+    Unicode string
+  Added ability to minimize
+  Changed default to show taskbar icon
+  Enhanced global exception handler:
+    Made m_strAudioFile into read-only property
+    Put into try block:
+      Get stack trace and other information from exception
+      Get current audio file from property
+      Assemble all information into single string
+      Write assembled string to clipboard
+      Fail silently and just report original message
+  Removed TagLib# project folder
+
+WpfAudioPlayer - 2017-07-22 v0.2.0.01
+  Added streaming audio for KSDS
+  Added for returning to track start on Home key pressed
+  Fixed issue: "WMA" image shown when mp3 file lacks album art
+
+WpfAudioPlayer - 2017-07-29 v0.2.0.02
+  Fixed issue: Tracks in "D:\Audio Library\MMJB\Amazon Purchases\William
+      Ackerman\It Takes A Year\." don't show tags properly
+    Album art is present but doesn't show
+    Track numbers show as 49, 59, 69, ...
+  Fixed issue: Artist and album tags don't show
+
+WpfAudioPlayer - 2017-07-31 v0.2.0.03
+  Fixed issue: KSDS doesn't show image or resume on wake after sleep
+
+WpfAudioPlayer - 2017-08-05 v0.2.0.04
+  Replaced KSDS png w/ jpg to reduce exe from 868kb to 736kb and zip from
+    521kb to 420kb
+
+WpfAudioPlayer - 2017-12-23 v0.2.0.05
+  Disabled pause key and corresponding menu items and hide the pause button 
+    control when streaming audio
+
+WpfAudioPlayer - 2018-02-08 v0.2.0.06
+  Fixed crash on files w/ uppercase extensions
+  Fixed app hanging after caught exception
+
+WpfAudioPlayer - 2018-02-10 v0.2.0.07
+  Modified mp3 tag reading code to read only the tag data by FileStream
+    instead of loading the entire file into memory
+
+WpfAudioPlayer - 2018-02-10 v0.2.0.08
+  Modified wav tag reading code to read only the tag data by FileStream
+    instead of loading the entire file into memory
+
+WpfAudioPlayer - 2018-02-10 v0.2.0.09
+  Removed commented-out code
+
+WpfAudioPlayer - 2018-02-11 v0.2.0.10
+  Minor code cleanup, commented out test code
+  Added code to display file last-mod timestamp if no featured artists tag
+    found
+  Expanded track time to show hours, if time spans longer than 59:59
+
+WpfAudioPlayer - 2018-02-11 v0.2.0.11
+  Removed commented-out code
+  Disabled Themes menu options
+  Disabled saving change to pause button setting in KSDS mode
+
+WpfAudioPlayer - 2018-02-11 v0.2.0.12
+  Made track time display display both elapsed and total time show hours
+    if track > 1 hour, otherwise just minutes and seconds
+  Disabled space-bar-play-pause for streaming KSDS
+
+WpfAudioPlayer - 2018-02-12 v0.2.0.13
+  Added code to allow adjustment to playing position by clicking and
+    dragging directly on the progress bar
+
+WpfAudioPlayer - 2018-02-13 v0.2.0.14
+  Fixed issue: ProgressBar sets to nearest hour for new times > 1 hour
+    into track
+  Formatted current position to show hours only if hours > 0, and minutes
+    only if hours > 0 or minutes > 0
+  Added code to reset ProgressBar on Stop
+  Added code to show tooltip on ProgressBar with track time at each point
+
+WpfAudioPlayer - 2018-02-14 v0.3.0.00
+  Added code to show moving text block with track position time when
+    dragging playing position in progress bar
+  Refined track elapsed time in status display to suppress leading zeros
+  Replaced progress bar time tooltip with moving text block for consistency
+  Fixed delay between clicking "Previous" button and current track time
+    being reset to 0.
+  Added code to restart/resume playing at new position when progress bar is
+    clicked on
+
+WpfAudioPlayer - 2018-02-17 v0.3.0.01
+  Added 32/64-bit build detail to version & build timestamp tooltip
+  Fixed issue: Occasional exception when accessing track duration before
+    TimeSpan property has a value
+  Fixed issue: Border thickness change didn't adjust window size
+  Fixed issue: Border thinkness save & restore didn't account for border
+    thickness > 0.0;
+  Fixed issue: Track position change & hovering time value text block only
+    worked when window at top left desktop corner
+
+WpfAudioPlayer - 2018-02-19 v0.3.0.02
+  Added new WpfAudioPlayer GitHub repository to about box
+  Fixed issue: infinite loop reading wav file with no tags
+  Added code to disable "Colors" menu group if neither border nor
+    background color menu items enabled
+
+WpfAudioPlayer - 2018-02-20 v0.3.0.03
+  Added code to use mousewheel to advance and backup 10 seconds
+
+WpfAudioPlayer - 2018-02-24 v0.3.0.04
+  Added option to start window hidden
+
+WpfAudioPlayer - 2018-03-07 v0.3.0.05
+  Handled exception when file gets renamed after pause, then resumed
+  Added code to handle multiple audio & playlist files & folders in
+    command line (as sent from "Send to" & "Open with" options
+
+WpfAudioPlayer - 2018-03-07 v0.3.0.06
+  Added menu option to pop up on top when resuming from pause
+
+WpfAudioPlayer - 2018-03-07 v0.3.0.07
+  Added menu option to always show progress bar
+
+WpfAudioPlayer - 2018-03-08 v0.3.0.08
+  Fixed issue: elapsed time resets to 0 for 1 second before being updated
+  Added menu option to select double-pressing pause key/button actions
+  Added menu option to back up 10 seconds on pause key double-press
+  Added menu option to pop up on top on resume from pause
+  Added code to hide double-pressing menu group & "pop up on top when
+    resuming from pause" menu option when pause key disabled
+
+WpfAudioPlayer - 2018-03-14 v0.3.0.09
+  Removed commented-out code
+  Added code to suppress leading '0' in hours (elapsed and duration)
+  Added code to hide progressbar when stopped and show on mouseover when in
+    "Show progress bar always" mode
+
+WpfAudioPlayer - 2018-03-16 v0.3.0.10
+  Fixed issue: track # not showing in all WMA files
+  Added code to determine bit rates for mp3, wav, and wma files
+  Added bit rate to display on top line
+  Removed some commented-out code
+
+WpfAudioPlayer - 2018-03-16 v0.3.0.11
+  Minor code clean-up in mp3 bitrate code
+
+WpfAudioPlayer - 2018-03-17 v0.3.0.12
+  Added code to receive multiple dropped audio and playlist files
+  Added code to skip invalid files in command line
+  Added code to disallow folders in dropped files
+  Added support for WMA VBR files
+
+WpfAudioPlayer - 2018-03-17 v0.3.0.13
+  Deleted some obsolete code
+  Cleaned up test code for pause/backup/advance debugging
+
+WpfAudioPlayer - 2018-03-18 v0.3.0.14
+  Refactored parsing and track-loading code in App.xaml.cs
+  Added code to limit count of audio tracks loaded from folders and
+    playlists
+
+WpfAudioPlayer - 2018-03-19 v0.3.0.15
+  Removed code commented-out in refactoring
+  Finished refactoring App.xaml.cs
+  Added code to recursively search directories and limit search depth
+  Added code to fix issue: double-press pause backs up too far
+
+WpfAudioPlayer - 2018-03-19 v0.3.0.16
+  Added code to fix issue: double-press pause backs up too far
+
+WpfAudioPlayer - 2018-03-22 v0.4.0.00
+  Commented out some test code
+  After a few days of testing, the backup issue seems to be resolved
+  Added code to restore from systray on double-pressing pause button if
+    Double-press event is mapped to rotating topmost mode
+  Changed ctrl-M to ctrl-S in code and in menu
+  Updated documentation for publication
+
+WpfAudioPlayer - 2018-03-23 v0.4.0.01
+  Added /p option to pause between tracks after playing first track
+
+WpfAudioPlayer - 2018-03-24 v0.4.0.02
+  Replaced all .tif images with .jpg
+
+WpfAudioPlayer - 2018-03-26 v0.4.0.03
+  Added code to begin track playing immediately in pause /p mode when the
+    "skip to next track" button is clicked
+  Added code to update track position & length when pausing on new track
+
+WpfAudioPlayer - 2018-04-04 v0.4.0.04
+  Replaced useless calls to Shutdown with code for throwing an exception
+    that gets handled silently to close the app immediately
+  Fixed issue: KSDS mode aborts w/ no files in command line
+  Added code to write missing file paths in playlist to clipboard
+
+WpfAudioPlayer - 2018-04-06 v0.4.0.05
+  Updated KSDS image with instruments outline
+  Fixed multiple file-not-found exceptions
+  Added .NET version to About box
+  Added code to close About box when app closes
+
+WpfAudioPlayer - 2018-04-06 v0.4.0.06
+  Added code to display list of all supported keystrokes and functions
+  Reduced About box width to better fit text
+  Fixed issue: send-to with folder containing audio tracks doesn't open
+
+WpfAudioPlayer - 2018-04-07 v0.4.0.07
+  Added code & Show Controls menu option to display controls & progress bar
+    for 5 seconds after pause button/key is pressed
+
+WpfAudioPlayer - 2018-04-10 v0.5.0.00
+  Major refactoring effort on all transport logic
+  Fixed issue: pause-before-playing affects next and previous track buttons
+  Fixed numerous playing & tag-showing issues found before refactoring
+
+WpfAudioPlayer - 2018-04-11 v0.5.0.01
+  Removed commented-out code
+  Added some logging code
+
+WpfAudioPlayer - 2018-04-16 v0.5.0.02
+  Added menu item & code to pop up window on opening new track
+  Fixed issue: cover art cleared on /r repeat with single track
+
+WpfAudioPlayer - 2018-04-25 v0.5.0.03
+  Added code to reset position to beginning without playing if in pause on
+     <ctrl>-Home & added to "Show Supported Keystrokes" message box
+  Added code to hide desktop icon in "Always on top" Topmost mode
+  Fixed issue that prevented About box from showing the first time
+
+WpfAudioPlayer - 2018-04-28 v0.5.0.04
+  Fixed issue: Controls stay hidden in "Always Show" Show Controls state
+  Fixed issue: Progressbar remains visible in stop state with a single file
+
+WpfAudioPlayer - 2018-05-19 v0.5.0.05
+  Set file timestamp display to show leading zero in time and date
+  Fixed wpl parsing code to correctly identify tags
+  Added code to skip lines in wpl files in XML comments
+  Changed doe to show tag background in mouseover in stop state
+
+WpfAudioPlayer - 2018-06-14 v0.5.0.06
+  Added code to detect and indicate invalid jpg images in WAV & MP3 files
+  Refined APIC tag parsing code to handle imperfect JPEG tags in WAV & MP3
+    files
+
+WpfAudioPlayer - 2018-06-15 v0.5.0.07
+  Removed obsolete code
+  Added code to detect and indicate invalid jpg images in WMA files
+  Refined APIC tag parsing code to handle imperfect JPEG tags in WMA files
+
+WpfAudioPlayer - 2018- v0.5.0.08
+  Removed commented-out code & hid test code
