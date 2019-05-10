@@ -202,7 +202,7 @@ WpfAudioPlayer - 2017-08-05 v0.2.0.04
     521kb to 420kb
 
 WpfAudioPlayer - 2017-12-23 v0.2.0.05
-  Disabled pause key and corresponding menu items and hide the pause button 
+  Disabled pause key and corresponding menu items and hide the pause button
     control when streaming audio
 
 WpfAudioPlayer - 2018-02-08 v0.2.0.06
@@ -405,7 +405,7 @@ WpfAudioPlayer - 2018-05-19 v0.5.0.05
   Set file timestamp display to show leading zero in time and date
   Fixed wpl parsing code to correctly identify tags
   Added code to skip lines in wpl files in XML comments
-  Changed doe to show tag background in mouseover in stop state
+  Changed code to show tag background in mouseover in stop state
 
 WpfAudioPlayer - 2018-06-14 v0.5.0.06
   Added code to detect and indicate invalid jpg images in WAV & MP3 files
@@ -417,5 +417,32 @@ WpfAudioPlayer - 2018-06-15 v0.5.0.07
   Added code to detect and indicate invalid jpg images in WMA files
   Refined APIC tag parsing code to handle imperfect JPEG tags in WMA files
 
-WpfAudioPlayer - 2018- v0.5.0.08
+WpfAudioPlayer - 2018-10-22 v0.5.0.08
   Removed commented-out code & hid test code
+  Added code to restore minimized window on "Pop up on resume"
+  Added code to patch issue from v0.5.0.06 that broke text tag reading
+    (temporary fix until the cause is discovered and fixed)
+
+WpfAudioPlayer - 2018-11-24 v0.5.0.09
+  Added code to determine MP3 bitrate from MP3 header
+
+WpfAudioPlayer - 2018-11-24 v0.5.0.10
+  Minor refactoring to clean up MP3 tag & header reading code
+  Removed unnecessary #using statements
+
+WpfAudioPlayer - 2018-12-05 v0.5.0.11
+  Changed to read-only registry access to determine .net version
+  Refined MP3 bitrate detection code, copied from MediaDir
+  Created DEBUG & RELEASE versions of bitrate detection code
+
+WpfAudioPlayer - 2018-12-08 v0.5.0.12
+  Resolved jpg image length issue created in v0.5.0.06
+  Added code to display embedded BMP cover art images
+  Added code to display unrecognized "image/" APIC strings
+
+WpfAudioPlayer - 2018-12-16 v0.5.0.13
+  Added code repeat bitrate detection until elapsed time matches MediaPlay's
+  Fixed incorrect time calculation (included non-audio data in calculation)
+
+WpfAudioPlayer - 2019-04-21 v0.5.0.14
+  Fixed divice-by-zero crash and 0 bitrate issue when playing WAV files
